@@ -1,0 +1,252 @@
+html {
+  background-color: #171717;
+  color: rgb(189, 189, 189, 0.985);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body {
+  margin: 0;
+  font-family: 'Jost', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgb(230, 230, 230, 0.9);
+}
+
+/* main layout */
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex: 15%;
+  height: calc(100vh - 28px);
+  background-color: #262626;
+}
+
+.content {
+  flex: 85%;
+  padding: 0 5%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 28px);
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* sidebar */
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid rgb(189, 189, 189, 0.3);
+  padding: 10px 0;
+}
+
+.titleContent {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  color: rgb(230, 230, 230, 0.9);
+  cursor: default;
+}
+
+.tabContainer {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 0 10px;
+  max-height: 600px;
+}
+
+.lowerTabs {
+  padding: 10px 0;
+  text-align: right;
+  font-size: 12px;
+}
+
+/* main content */
+
+.topBar {
+  padding: 15px 0;
+  cursor: default;
+}
+
+.inputField {
+  padding: 0 5px;
+  height: 40px;
+  border: none;
+  border-radius: 3px;
+  background-color: rgba(54, 54, 54, 0.5);
+  color: rgb(230, 230, 230, 0.9);
+  font-size: large;
+  font-weight: 900;
+  cursor: text;
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.inputBtn {
+  margin-left: 5px;
+  height: 40px;
+  padding: 0 15px;
+  padding-top: 1px;
+  border: none;
+  border-radius: 3px;
+  background-color: rgba(54, 54, 54, 0.5);
+  color: rgb(230, 230, 230, 0.9);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chartSection {
+  display: flex;
+  justify-content: center;
+}
+
+/* tracks */
+
+.trackRow {
+  display: flex;
+  align-items: center;
+  margin: 5px auto;
+  background-color: rgba(54, 54, 54, 0.5);
+  color: rgb(230, 230, 230, 0.9);
+  border-radius: 3px;
+}
+
+/* .trackRow:hover {
+  background-color: #1f1f1f;
+} */
+
+.rowEl {
+  margin: 0px;
+  padding: 0px 0;
+  cursor: default;
+}
+
+.rank {
+  width: 70px;
+  margin: 0px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.trackData {
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+.artist {
+  margin-right: 10px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.track {
+  padding: 0;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* trends */
+
+.audioFeatures {
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.sourceLink {
+  color: rgb(230, 230, 230, 0.9);
+  text-decoration: none;
+}
+
+.sourceLink:hover {
+  color: rgb(128, 103, 220);
+}
+
+.featureDescription {
+  padding: 0 20px;
+  font-size: 12px;
+}
+
+/* about */
+
+.aboutContent {
+  flex: auto;
+  margin-top: 80px;
+}
+
+/* footer */
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(128, 103, 220);
+  border-radius: 2px;
+  padding: 2px 0;
+}
+
+.footerContainer {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sig {
+  color: rgb(23, 23, 23, 0.9);
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* utilities */
+
+.scroll {
+  overflow-y: auto;
+}
+
+.loading,
+.error h1 {
+  text-align: center;
+  color: rgb(230, 230, 230, 0.9);
+}
+
+.wire {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  border-color: white;
+}
+
+.shadow {
+  box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.8);
+}
