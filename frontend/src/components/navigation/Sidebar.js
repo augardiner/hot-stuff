@@ -6,7 +6,7 @@ const Sidebar = (props) => {
   return (
     <div className='sidebar'>
       <div className='titleContainer'>
-        <div className='titleContent'>Top 100</div>
+        <div className='titleContent'>Hot 100</div>
       </div>
       <div className='tabContainer'>
         <div>

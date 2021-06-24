@@ -6,7 +6,6 @@ am4core.useTheme(am4themes_animated);
 
 const Line = (props) => {
   const { data } = props;
-  console.log(data);
   const CHART_ID = 'featureChart';
   const lightWhite = 'rgb(230, 230, 230)';
 

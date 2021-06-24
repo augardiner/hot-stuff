@@ -43,6 +43,7 @@ body {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 28px);
+  width: 100%;
   max-width: 1200px;
   margin: auto;
 }
@@ -73,7 +74,7 @@ body {
   justify-content: space-between;
   margin-top: 10px;
   padding: 0 10px;
-  max-height: 600px;
+  max-height: 790px;
 }
 
 .lowerTabs {
@@ -180,7 +181,7 @@ body {
 
 .sourceLink {
   color: rgb(230, 230, 230, 0.9);
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 
 .sourceLink:hover {
@@ -197,6 +198,43 @@ body {
 .aboutContent {
   flex: auto;
   margin-top: 80px;
+}
+
+.aboutContent h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.aboutContent h4 {
+  margin: 10px 0;
+}
+
+.aboutContent p {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.aboutContent a {
+  margin: 0;
+  padding: 0;
+  color: rgb(230, 230, 230, 0.9);
+}
+
+.aboutContent a:hover {
+  color: rgb(128, 103, 220);
+}
+
+.aboutContent ul {
+  margin-top: 0;
+}
+
+.aboutSection {
+  margin-bottom: 20px;
+}
+
+.githubLink {
+  color: rgb(230, 230, 230, 0.9);
+  /* font-weight: 400; */
 }
 
 /* footer */
