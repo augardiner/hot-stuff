@@ -12,7 +12,7 @@ The first number one song of the Billboard Hot 100 was "Poor Little Fool" by Ric
 
 The API is written in Python with the Flask framework.
 
-**Tracks:** There is a separate weekly script, running weekly, which scrapes the Billboard site page and adds each song into the database.
+**Tracks:** There is a separate script, running weekly, which scrapes the Billboard site page and adds each song into the database.
 
 **Data:** The weekly script uses the [Spotipy](https://spotipy.readthedocs.io/en/2.18.0/) library to get [Spotify Audio Features](https://developer.spotify.com/documentation/web-api/reference/#object-audiofeaturesobject) for each track, used for visualizations.
 
@@ -25,6 +25,6 @@ The API is written in Python with the Flask framework.
 
 ## Front End
 
-The front end is written in Javascript with the React library.
+The front end is written with React.
 
 **Visualizations:** Visualizations are created using the [amCharts](https://www.amcharts.com/) library.

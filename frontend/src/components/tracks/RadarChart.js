@@ -70,7 +70,7 @@ const Radar = (props) => {
       id={CHART_ID}
       style={{
         width: '100%',
-        height: '300px'
+        height: '260px'
       }}
     />
   );
