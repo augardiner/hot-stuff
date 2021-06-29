@@ -3,38 +3,61 @@ import TracksSection from './components/tracks/TracksSection';
 import TrendsSection from './components/trends/TrendsSection';
 import AboutSection from './components/about/AboutSection';
 import Section from './components/navigation/Section';
-import Sidebar from './components/navigation/Sidebar';
+import StSidebar from './components/navigation/Sidebar';
+// import Sidebar from './components/navigation/Sidebar1';
 
 function App() {
+  const [nav, setNav] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
+  const showNav = () => {
+    setNav(!nav);
+  };
   const handleClick = (e) => {
     const index = parseInt(e.target.id, 0);
     if (index !== activeTab) {
       setActiveTab(index);
+      setNav(false);
     }
   };
   return (
     <div className='app'>
       {/* sidebar */}
-      <Sidebar handleClick={handleClick} activeTab={activeTab} />
+      <StSidebar
+        handleClick={handleClick}
+        activeTab={activeTab}
+        openNav={showNav}
+        nav={nav}
+      />
+
+      <div className='titleContainer mobileHeader'>
+        <div className='titleContent'>Hot 100</div>
+      </div>
 
       {/* content */}
-      <div className='content'>
+      <div>
         <Section activeTab={activeTab === 0}>
-          <TracksSection />
+          <TracksSection showNav={showNav} />
         </Section>
         <Section activeTab={activeTab === 1}>
-          <TrendsSection />
+          <TrendsSection showNav={showNav} />
         </Section>
         <Section activeTab={activeTab === 3}>
-          <AboutSection />
+          <AboutSection showNav={showNav} />
         </Section>
       </div>
 
       {/* footer */}
       <div className='footer'>
         <span className='footerContainer'>
-          <p className='sig'>AUG | 2021</p>
+          {/* <a
+            href='https://github.com/augardiner/hot-100'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='sourceLink'
+          >
+            Source Code
+          </a> */}
+          <p>AUG | 2021</p>
         </span>
       </div>
     </div>

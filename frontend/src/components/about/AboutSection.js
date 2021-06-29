@@ -1,12 +1,22 @@
-const AboutSection = () => {
+import Hamburger from '../navigation/Hamburger';
+
+const AboutSection = (props) => {
+  const { showNav } = props;
   return (
     <div className='section'>
+      <div className='topBar aboutHeader'>
+        <Hamburger showNav={showNav} />
+      </div>
       <div className='aboutContent scroll'>
         <h2>The Billboard Hot 100</h2>
         <div className='aboutSection'>
           <p>
             The{' '}
-            <a href='https://www.billboard.com/charts/hot-100'>
+            <a
+              href='https://www.billboard.com/charts/hot-100'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               Billboard Hot 100
             </a>{' '}
             is the music industry standard record chart in the United States for
@@ -16,24 +26,39 @@ const AboutSection = () => {
           </p>
           <p>
             The first number one song of the Billboard Hot 100 was "Poor Little
-            Fool" by Ricky Nelson, on August 4, 1958.
+            Fool" by Ricky Nelson, on August 4, 1958.{' '}
+            <a
+              href='https://en.wikipedia.org/wiki/Billboard_Hot_100'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Source
+            </a>
           </p>
-          <a href='https://en.wikipedia.org/wiki/Billboard_Hot_100'>Source</a>
         </div>
         <div className='aboutSection'>
           <h2>API</h2>
           <p>The API is written in Python with the Flask framework.</p>
-          {/* <h4>Tracks</h4> */}
           <p>
-            <b>Tracks: </b>There is a separate weekly script, running weekly,
-            which scrapes the Billboard site page and adds each song into the
+            <b>Tracks: </b>There is a separate script, running weekly, which
+            scrapes the Billboard site page and adds each song into the
             database.
           </p>
           <p>
             <b>Data: </b>The weekly script uses the{' '}
-            <a href='https://spotipy.readthedocs.io/en/2.18.0/'>Spotipy</a>{' '}
+            <a
+              href='https://spotipy.readthedocs.io/en/2.18.0/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Spotipy
+            </a>{' '}
             library to get{' '}
-            <a href='https://developer.spotify.com/documentation/web-api/reference/#object-audiofeaturesobject'>
+            <a
+              href='https://developer.spotify.com/documentation/web-api/reference/#object-audiofeaturesobject'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               Spotify Audio Features
             </a>{' '}
             for each track, used for visualizations.
@@ -65,12 +90,25 @@ const AboutSection = () => {
           <p>The front end is written in Javascript with the React library.</p>
           <p>
             <b>Visualizations: </b>Visualizations are created using the{' '}
-            <a href='https://www.amcharts.com/'>amCharts</a> library.
+            <a
+              href='https://www.amcharts.com/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              amCharts
+            </a>{' '}
+            library.
           </p>
         </div>
-        <a href='https://github.com/augardiner/hot-100' className='githubLink'>
-          Source Code
-        </a>
+        <h3 className='sourceLink'>
+          <a
+            href='https://github.com/augardiner/hot-100'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Source Code
+          </a>
+        </h3>
       </div>
     </div>
   );
