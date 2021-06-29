@@ -15,7 +15,7 @@ const DatePicker = (props) => {
     }
   };
   return (
-    <form className='topBar' onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <input
         className='inputField'
         type='date'

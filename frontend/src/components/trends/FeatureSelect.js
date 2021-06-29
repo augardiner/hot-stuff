@@ -14,7 +14,7 @@ const FeatureSelect = (props) => {
     }
   };
   return (
-    <form className='topBar' onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <select name='feature' className='inputField' onChange={handleChange}>
         <option value='tempo'>Tempo</option>
         <option value='energy'>Energy</option>

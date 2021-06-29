@@ -63,11 +63,13 @@ const Radar = (props) => {
     return chart.colors.getIndex(target.dataItem.index);
   });
 
+  // chart.dispose();
+
   return (
     <div
       id={CHART_ID}
       style={{
-        width: '50%',
+        width: '100%',
         height: '300px'
       }}
     />

@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import DatePicker from './DatePicker';
 import Radar from './RadarChart';
+import Hamburger from '../navigation/Hamburger';
 
-const TracksSection = () => {
+const TracksSection = (props) => {
+  const { showNav } = props;
   const [data, setData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(null);
@@ -36,11 +38,14 @@ const TracksSection = () => {
 
   return (
     <div className='section'>
-      <DatePicker
-        submitFunc={getData}
-        initValue={new Date().toISOString().slice(0, 10)}
-      />
-      <div className='chartSection'>
+      <div className='topBar'>
+        <DatePicker
+          submitFunc={getData}
+          initValue={new Date().toISOString().slice(0, 10)}
+        />
+        <Hamburger showNav={showNav} />
+      </div>
+      <div>
         <Radar data={data.averages} />
       </div>
       <div className='scroll'>

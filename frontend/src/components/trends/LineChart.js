@@ -67,13 +67,16 @@ const Line = (props) => {
   chart.legend.itemContainers.template.paddingTop = 0;
   chart.legend.itemContainers.template.paddingBottom = 0;
 
+  // chart.dispose();
+
   return (
     <div
       id={CHART_ID}
       style={{
         width: '100%',
-        height: '350px',
-        marginTop: '10px'
+        height: '300px',
+        marginTop: '10px',
+        marginRight: '20px'
       }}
     />
   );
