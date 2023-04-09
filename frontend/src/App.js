@@ -30,7 +30,7 @@ function App() {
       />
 
       <div className='titleContainer mobileHeader'>
-        <div className='titleContent'>Hot 100</div>
+        <div className='titleContent'>Hot Stuff</div>
       </div>
 
       {/* content */}

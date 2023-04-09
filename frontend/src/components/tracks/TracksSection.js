@@ -13,10 +13,11 @@ const TracksSection = (props) => {
     setIsLoaded(false);
     setError(false);
 
+    const url = 'http://127.0.0.1:5001/api';
     const endpoint = 'week';
     const param = `${input}`;
 
-    const response = await fetch(`/api/${endpoint}/${param}`);
+    const response = await fetch(`${url}/${endpoint}/${param}`);
     if (response.status > 299) {
       setIsLoaded(true);
       setError(response.statusText);

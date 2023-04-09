@@ -3,16 +3,11 @@ from api.models import Tracks, TrackSchema, YearlyAvg, YearlyAvgSchema
 from sqlalchemy import func
 from api import app
 from api.funcs import get_query_week, get_rolling_avg, get_weekly_data
+from flask_cors import cross_origin
 
 track_schema = TrackSchema()
 tracks_schema = TrackSchema(many=True)
 yearly_schema = YearlyAvgSchema(many=True)
-
-
-# home route serves app from react build folder
-@app.route('/')
-def index():
-    return app.send_static_file('index.html')
 
 
 # api/ route redirects to current week
@@ -55,8 +50,7 @@ def get_tracks_by_artist(artist):
     return jsonify(return_list)
 
 
-# get yearly mean
-# and rolling average of feature
+# get yearly mean and rolling average of feature
 @app.route('/api/analysis/<feature>', methods=['GET'])
 def get_avg_feature(feature):
     returnObj = {}

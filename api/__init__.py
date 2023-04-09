@@ -2,24 +2,29 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_cors import CORS
-import os
 
-# init app
-app = Flask(__name__, static_folder='../frontend/build', static_url_path='/')
+app = Flask(__name__)
 CORS(app)
 
-# database
-# dbEndpoint = os.environ['PG_ENDPOINT']
-# dbUser = os.environ['PG_USER']
-# dbPass = os.environ['PG_PASS']
-# dbName = os.environ['PG_NAME']
-# dbURL = f'postgresql://{dbUser}:{dbPass}@{dbEndpoint}/{dbName}'
-dbURL = f'postgresql://postgres:postgres@localhost/alexgardiner'
+dbURL = f'postgresql://postgres:postgres@192.168.80.2:5432/db'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = dbURL
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# initialize db and ma
+def option_todo(id): 
+  return '', 204 
+ 
+app.add_url_rule('/', view_func=option_todo, provide_automatic_options=False, methods=['OPTIONS']) 
+app.add_url_rule(r'/api/week', view_func=option_todo, provide_automatic_options=False, methods=['OPTIONS']) 
+app.add_url_rule(r'/api/analysis', view_func=option_todo, provide_automatic_options=False, methods=['OPTIONS']) 
+
+@app.after_request
+def after_request(response):
+  response.headers['Access-Control-Allow-Methods']='*'
+  response.headers['Access-Control-Allow-Origin']='*'
+  response.headers['Vary']='Origin'
+  return response
+
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
