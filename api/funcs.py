@@ -33,6 +33,7 @@ def get_rolling_avg(data):
     df = df.where(pd.notnull(df), None)
     df = df.rename(columns={feature: 'value'})
     d = df.to_dict(orient='records')
+    d = [i for i in d if str(i["rolling"]) != "nan"]
     return d
 
 

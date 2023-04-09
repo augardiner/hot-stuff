@@ -33,7 +33,8 @@ const TracksSection = (props) => {
   };
 
   useEffect(() => {
-    getData(new Date().toISOString().slice(0, 10));
+    // getData(new Date().toISOString().slice(0, 10));
+    getData('2021-11-13');
   }, []);
 
   return (
@@ -41,7 +42,8 @@ const TracksSection = (props) => {
       <div className='topBar'>
         <DatePicker
           submitFunc={getData}
-          initValue={new Date().toISOString().slice(0, 10)}
+          // initValue={new Date().toISOString().slice(0, 10)}
+          initValue='2021-11-13'
         />
         <Hamburger showNav={showNav} />
       </div>
