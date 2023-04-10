@@ -3,7 +3,7 @@ import { useState } from 'react';
 const DatePicker = (props) => {
   const { initValue, submitFunc } = props;
   const [inputValue, setInputValue] = useState(initValue);
-  const today = new Date().toISOString().slice(0, 10);
+  // const today = new Date().toISOString().slice(0, 10);
   const handleChange = (e) => {
     const value = e.target.value;
     setInputValue(value);
@@ -22,7 +22,7 @@ const DatePicker = (props) => {
         value={inputValue}
         onChange={handleChange}
         min='1958-07-27'
-        max={today}
+        max='2021-11-13'
       />
       <input className='inputBtn' type='submit' value='Go' />
     </form>
