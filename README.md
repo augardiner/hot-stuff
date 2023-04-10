@@ -1,4 +1,4 @@
-# hot-100
+# hot-stuff
 
 ## The Billboard Hot 100
 
